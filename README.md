@@ -4,7 +4,7 @@ This is a skeleton for a demo of GitHub
 
 To install the package:
 
-     devtools::install_github('richarddmorey/openScienceExample')
+     devtools::install_github('richarddmorey/openScienceExample', 'openScienceExample')
 
 Make sure you install the `devtools` package first.
 
