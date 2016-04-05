@@ -1,0 +1,65 @@
+---
+title       : This is a skeleton talk.
+subtitle    : This is a subtitle
+author      : Richard D. Morey (Twitter @richarddmorey)
+job         : Cardiff University // April 2016
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {selfcontained, standalone, draft}
+logo        : cardiff_logo.png      
+---
+
+
+
+```{r echo=FALSE,message=FALSE,results='hide',cache=FALSE}
+  ### This code gives us nicer figures.
+  require(Cairo)
+  
+  mainfont <- "Arial"
+  CairoFonts(regular = paste(mainfont,"style=Regular",sep=":"),
+             bold = paste(mainfont,"style=Bold",sep=":"),
+             italic = paste(mainfont,"style=Italic",sep=":"),
+             bolditalic = paste(mainfont,"style=Bold Italic,BoldItalic",sep=":"),
+             symbol = "Symbol")
+  pdf <- CairoPDF
+  png <- CairoPNG
+  svg <- CairoSVG
+```
+
+
+## This is a title.
+
+### This is a large font.
+
+This is a list.
+* Item 1
+* Item 2
+* Item 3
+
+---
+
+## This is a second slide
+
+<center>
+```{r echo=FALSE,fig.width=7,fig.height=5,dev='CairoSVG',dev.args=list(pointsize=11)}
+
+ci.data = read.csv("../HoekstraEtAl2014.data.csv")
+
+### This code is taken from the ?persp example
+x <- seq(-10, 10, length= 30)
+y <- x
+f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
+z <- outer(x, y, f)
+z[is.na(z)] <- 1
+par(bg = "white", mar=c(1.5,1,0,0))
+persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "lightblue",
+      ltheta = 120, shade = 0.75, ticktype = "detailed",
+      xlab = "X", ylab = "Y", zlab = "Sinc( r )"
+      )
+
+
+```
+</center>
+
