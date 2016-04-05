@@ -1,0 +1,11 @@
+Package: openScienceExample
+Type: Package
+Title: Example of a basic data package
+Version: 0.1
+Date: 2016-04-05
+Author: Richard D. Morey
+Maintainer: Richard D. Morey <richarddmorey@gmail.com>
+Description: A very basic package including data and and a vignette 
+License: CC0
+VignetteBuilder: knitr
+Suggests: knitr
